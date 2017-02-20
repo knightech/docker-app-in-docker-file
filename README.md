@@ -42,13 +42,18 @@ log into Docker on your target (probably AWS) and you can run it by SSHing to yo
 
 and issuing the following command which will go to Docker Hub and pull the latest image for the repository:
 
-* [ec2-user@ip-172-31-2-175 ~]$ docker run petecknight/docker-app-in-pom
-* Unable to find image 'petecknight/docker-app-in-docker-file:latest' locally
-* latest: Pulling from petecknight/docker-app-in-docker-file
+* [ec2-user@ip-172-31-2-175 ~]$ docker run -d -p 80:8080 petecknight/docker-app-in-docker-file
 
 There's some stuff during the pull and then you'll get:
 
 * Status: Downloaded newer image for petecknight/docker-app-in-docker-file:latest
-* Hello World!
+
+## Look it up
+
+Call your public IP of your EC2 container with the port you've bound the tomcat fired up on 8080 in the container 
+(in the above example its 80 which is the default, so you don't need to add it in)
+
+* http://52.56.116.180
+
 
 ## Finished!
